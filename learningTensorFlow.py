@@ -9,11 +9,11 @@ tlen = 4
 ii = 0
 
 #inits
-x = np.zeros((numTestCases, tlen))
-
+#x = np.zeros((numTestCases, tlen))
+x = []
 #Fibb Input Data
-for i in range(0, numTestCases):
-    x[i, 0] = i
+#for i in range(0, numTestCases):
+#    x[i, 0] = i
 
 
 #Fibb Output Data
@@ -28,8 +28,9 @@ def F(n):
         return fibLookUp[n]
 
 F(numTestCases+2)
-for i in range(2, numTestCases):
-    x[i, :] = fibLookUp[i]
+fibList = list(fibLookUp)
+for i in range(2, numTestCases, tlen):
+    x.append(fibList[i: i+tlen])
 
 dehbug = 1
 
