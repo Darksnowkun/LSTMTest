@@ -1,4 +1,4 @@
-"""import numpy as np
+import numpy as np
 import tensorflow as tf
 import copy as cp
 from functions import *
@@ -14,7 +14,8 @@ x = np.zeros((numTestCases, tlen))
 #Fibb Input Data
 for i in range(0, numTestCases):
     x[i, 0] = i
-"""
+
+
 #Fibb Output Data
 fibLookUp = dict()
 def F(n):
@@ -25,14 +26,10 @@ def F(n):
     else: 
         fibLookUp[n] = F(n-1)+F(n-2)
         return fibLookUp[n]
-print(F(20))
 
+F(numTestCases+2)
+for i in range(2, numTestCases):
+    x[i, :] = fibLookUp[i]
 
+dehbug = 1
 
-
-"""
-x = [
-    [1, 1, 2, 3],
-    [2, 3, 5, 8],
-    [21, 34, ...]
-     ]"""
